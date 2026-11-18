@@ -11,6 +11,10 @@ The goal of the first module is to learn to create basic circuits, modify and lo
 - [Infrared Remote Control](./01_05_ir_remote.md)
 - [LCD1602 Display](./01_06_lcd1602.md)
 - [Ultrasonic Ranging with Interrupts](./01_07_ultrasonic_interrupts.md)
+- [Resistive Soil Moisture Sensor](./01_08_resistive_soil_moisture.md)
+- [Capacitive Soil Sensor](./01_09_capacitive_soil_sensor.md)
+- [Soil Moisture Sensor](./01_10_soil_moisture_sensor.md)
+- [RFID Reader (RC522)](./01_11_rfid_rc522.md)
 
 Previous: [Setup](../setup/getting_started.md) | Next: [Module 2 - Input and Output](./../02_input_and_output/index.md)
 
