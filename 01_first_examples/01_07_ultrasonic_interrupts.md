@@ -61,7 +61,7 @@ We need an integer so we will just pick 1 as it's the smallest non-zero value we
 
 ## Component List
 
-![Components](../images/03_04_components.png)
+![Components](../images/01_07_components.png)
 
 ## Circuit
 
@@ -72,7 +72,7 @@ We need an integer so we will just pick 1 as it's the smallest non-zero value we
 > Disconnect all power before building the circuit. Reconnect once verified.
 
 
-![Wiring Diagram](../images/03_04_wiring_diagram.png)
+![Wiring Diagram](../images/01_07_wiring_diagram.png)
 
 **Connections:**
 - HC-SR04 Vcc → 5V
@@ -82,7 +82,7 @@ We need an integer so we will just pick 1 as it's the smallest non-zero value we
 
 ### Schematic Diagram
 
-![Schematic Diagram](../images/03_04_schematic_diagram.png)
+![Schematic Diagram](../images/01_07_schematic_diagram.png)
 
 ## Code
 

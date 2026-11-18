@@ -28,7 +28,7 @@ An infrared(IR) receiver is a component which can receive the infrared light and
 
 ## Component List
 
-![Component List](../images/03_09_components.png)
+![Component List](../images/01_05_components.png)
 
 ## Circuit
 
@@ -36,11 +36,11 @@ An infrared(IR) receiver is a component which can receive the infrared light and
 
 > Disconnect all power before building the circuit. Reconnect once verified.
 
-![Wiring Diagram](../images/03_09_wiring_diagram.png)
+![Wiring Diagram](../images/01_05_wiring_diagram.png)
 
 ### Schematic Diagram
 
-![Schematic Diagram](../images/03_09_schematic_diagram.png)
+![Schematic Diagram](../images/01_05_schematic_diagram.png)
 
 ## Code
 
