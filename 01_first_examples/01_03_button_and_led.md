@@ -10,7 +10,7 @@ Control an LED with a push button switch. When the button is pressed the LED tur
 
 This 4-pin push button is a 2-pole switch. The two pins on each side are internally connected. When the button is pressed, the left and right sides connect, completing the circuit.
 
-![Push Button](../images//push_button_1_component.png)
+![Push Button](../images/push_button_1_component.png)
 
 Left pins are always connected to each other; right pins are always connected to each other. Pressing the button bridges left and right.
 
@@ -31,13 +31,13 @@ Left pins are always connected to each other; right pins are always connected to
 - LED cathode → GND
 - Push button one side → GPIO13
 - Push button other side → GND
-- GPIO13 also connected via 10kΩ pull-up resistor to 3.3V
+- GPIO13 also connected via 10kΩ pull-up resistor to 3.3V (shown in the diagrams; optional — see note below)
 
 ### Schematic Diagram
 
 ![Schematic Diagram](../images/01_03_schematic_diagram.png)
 
-The internal pull-up (`Pin.PULL_UP`) in software replaces the need for an external pull-up resistor in this case, but the schematic uses external resistors for clarity.
+The code enables the ESP32's internal pull-up (`Pin.PULL_UP`), so the external 10kΩ pull-up resistor is not required for this circuit to work. The diagrams include it for clarity — you can leave it out.
 
 ## Code
 
@@ -66,7 +66,7 @@ except:
 ## How to Run
 
 ### Online
-1. Open Thonny → `Micropython_Codes/02.1_ButtonAndLed/`.
+1. Open Thonny → `01_first_examples/code/`.
 2. Double-click `ButtonAndLed.py`.
 3. Click **Run current script**.
 4. Press the button — LED turns ON. Release — LED turns OFF.
@@ -102,7 +102,7 @@ else:
 
 ## Further Exploration
 
-- Modify code so the LED is normally on and turns off when the button is pressed.~
+- Modify code so the LED is normally on and turns off when the button is pressed.
 - Modify code so the LED blinks when button is pressed and is solid on when button is not pressed.
 
 [Back to Module](./index.md)

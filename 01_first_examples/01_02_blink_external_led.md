@@ -61,7 +61,7 @@ Rows of holes on a breadboard are electrically connected internally. Insert comp
 
 ## Code
 
-**File:** [`./Blink.py`](./code/Blink.py)
+**File:** [`01_first_examples/code/Blink.py`](./code/Blink.py)
 
 ```python
 from time import sleep_ms

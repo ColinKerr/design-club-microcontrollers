@@ -7,7 +7,6 @@ Blink the built-in LED on the ESP32-S3 WROOM. This is the "Hello World" of micro
 - Thonny
 - Python
 - ESP32 Microcontroller
-- Breadboard
 
 ## Component List
 

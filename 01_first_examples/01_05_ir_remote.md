@@ -44,6 +44,8 @@ An infrared(IR) receiver is a component which can receive the infrared light and
 
 ## Code
 
+**File:** [`01_first_examples/code/Infrared_Remote.py`](./code/Infrared_Remote.py)
+
 ```python
 from irrecvdata import irGetCMD
 
@@ -71,3 +73,5 @@ The `irGetCMD` class listens to the pin specified in the constructor and calls t
 ## Further Exploration
 
 - Add code to turn a light on and off when the power button is pressed.
+
+[Back to Module](./index.md)

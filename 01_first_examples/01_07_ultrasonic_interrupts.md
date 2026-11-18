@@ -51,11 +51,11 @@ Now we have the duty cycle and frequency we need to configure the PWM, here is t
 - `freq` is frequency in Hz
 - `duty` is an integer from 0 to 1023.  0 is 0% duty cycle and 1023 is 100% duty cycle
 
-Do frequency requires no conversion but we need to convert from duty cycle in percent to duty cycle as a value from 0-1023:
+So frequency requires no conversion but we need to convert from duty cycle in percent to duty cycle as a value from 0-1023:
 
 `0.01 % = duty / 1023` ==> `0.0001 = duty / 1023` ==> `duty = 0.0001 * 1023` ==> `duty = 0.1023`
 
-We need an integer so we will just pick 1 as it's the smallest non-zero value we can enter.  The trigger pulse will be too long but it should still work fine.
+We need an integer so we will just pick 1 as it's the smallest non-zero value we can enter.  At 10 Hz, `duty = 1` gives a pulse of about `1 / 1023 * 100 ms ≈ 98 us`, roughly 10 times longer than the 10 us ideal, but the sensor still works fine.
 
 
 
@@ -86,7 +86,7 @@ We need an integer so we will just pick 1 as it's the smallest non-zero value we
 
 ## Code
 
-**File:** [`01_first_examples/code/Ultrasonic_Ranging.py`](./code/Ultrasonic_Ranging.py)
+**Files:** [`01_first_examples/code/Ultrasonic_Ranging.py`](./code/Ultrasonic_Ranging.py), [`01_first_examples/code/ultrasonic.py`](./code/ultrasonic.py)
 
 ```python
 from ultrasonic import Ultrasonic
@@ -105,7 +105,7 @@ while True:
 
 ### Online
 1. Open Thonny → `01_first_examples/code/`.
-2. Right-click `ultrasonic.py` → **Upload to /** if they aren't already on the device.
+2. Right-click `ultrasonic.py` → **Upload to /** if it isn't already on the device.
 3. Double-click `Ultrasonic_Ranging.py`.
 4. Click **Run current script**
 
@@ -117,17 +117,21 @@ while True:
 ### Fire a trigger pulse
 
 ```python
+class Ultrasonic:
+    def __init__(self, echoPinNum, triggerPinNum):
+        # ...
         self.trigPulse = PWM(Pin(triggerPinNum, Pin.OUT), freq=10, duty=1)
 ```
-Holds the `Trig` pin HIGH for about 100 microseconds, telling the HC-SR04 to send an ultrasonic pulse.
+Starts a PWM signal on the `Trig` pin at 10 Hz. Each cycle holds the pin HIGH for about 100 microseconds (see above), telling the HC-SR04 to send an ultrasonic pulse. This runs in hardware, so the main program is free to do other things.
 
 ### Time the echo
 
 ```python
+        # (also in __init__)
         self.echoPin.irq(trigger=Pin.IRQ_RISING | Pin.IRQ_FALLING, handler=self.measure)
 ```
 
-Constructs an interrupt that is triggered when `Echo` pin to goes from LOW to HIGH (the pulse has been sent), and when it goes from HIGH to LOW (the echo was received).  On each trigger it runs the callback function `measure`.
+Constructs an interrupt that is triggered when `Echo` pin goes from LOW to HIGH (the pulse has been sent), and when it goes from HIGH to LOW (the echo was received).  On each trigger it runs the callback function `measure`.
 
 ```python
     def measure(self, pin):
@@ -154,3 +158,5 @@ When called on the rising edge (pin.value() == 1) the start ticks are saved.  Wh
 ## Further Exploration
 
 - Update the Ultrasonic class so you can provide a callback function that is called every time a measurement is made.
+
+[Back to Module](./index.md)
