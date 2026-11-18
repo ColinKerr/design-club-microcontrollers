@@ -86,7 +86,7 @@ We need an integer so we will just pick 1 as it's the smallest non-zero value we
 
 ## Code
 
-**File:** [`05_advanced/code/Ultrasonic_Ranging_Interrupt.py`](./code/Ultrasonic_Ranging_Interrupt.py)
+**File:** [`01_first_examples/code/Ultrasonic_Ranging.py`](./code/Ultrasonic_Ranging.py)
 
 ```python
 from ultrasonic import Ultrasonic
@@ -104,9 +104,9 @@ while True:
 ## How to Run
 
 ### Online
-1. Open Thonny → `056_interrupts_and_timers/code/`.
+1. Open Thonny → `01_first_examples/code/`.
 2. Right-click `ultrasonic.py` → **Upload to /** if they aren't already on the device.
-3. Double-click `Ultrasonic_Ranging_Interrupt.py`.
+3. Double-click `Ultrasonic_Ranging.py`.
 4. Click **Run current script**
 
 
